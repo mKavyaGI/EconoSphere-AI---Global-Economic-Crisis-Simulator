@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
 
   postgres:
@@ -60,13 +58,26 @@ services:
       context: ../../apps/api
       dockerfile: Dockerfile
     environment:
-      DATABASE_URL: postgresql+asyncpg://postgres:postgres@postgres:5432/econosphere
+      ENV: "production"
+      PRODUCTION_SAFETY_MODE: "true"
+      ALLOWED_ORIGINS: '["https://api.econosphere.ai"]'
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: 5432
+      POSTGRES_DB: econosphere
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
       NEO4J_URI: bolt://neo4j:7687
-      NEO4J_USER: neo4j
+      NEO4J_USERNAME: neo4j
       NEO4J_PASSWORD: password
+      DATABASE_URL: postgresql+asyncpg://postgres:postgres@postgres:5432/econosphere
       REDIS_URL: redis://redis:6379/0
     ports:
       - "8000:8000"
+    volumes:
+      - ../../models:/models:ro
+      - ../../data:/data:ro
     depends_on:
       postgres:
         condition: service_healthy

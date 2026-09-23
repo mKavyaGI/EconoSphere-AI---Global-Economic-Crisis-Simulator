@@ -1,0 +1,29 @@
+{
+  "timestamp": "2026-08-20T06:35:22.618321+00:00",
+  "final_decision": "REPAIR SUCCESSFUL",
+  "raw_dataset_md5": "8ac7e0b2bf09fbe89289f82d0c7cf25e",
+  "pre_repair_joblib_md5": "7ce62cb877b47e5573a9e0342da9709d",
+  "old_feature_count": 29,
+  "old_max_depth": 6,
+  "old_l2_regularization": 1.0,
+  "old_model_class": "HistGradientBoostingRegressor",
+  "authoritative_validation_RMSE": 8.285269216910393,
+  "authoritative_test_RMSE": 3.9112850017522343,
+  "prediction_equivalence_result": "PASS",
+  "serialized_validation_RMSE": 8.285269216910393,
+  "serialized_test_RMSE": 3.9112850017522343,
+  "Candidate_B_isolation_result": "PASS",
+  "post_repair_joblib_md5": "9c539735897eaf6e72e5f54f047390d7",
+  "protected_artifact_immutability_results": "PASS",
+  "new_feature_count": 31,
+  "new_max_depth": 5,
+  "new_l2_regularization": 5.0,
+  "new_model_class": "HistGradientBoostingRegressor",
+  "new_parameters": {
+    "l2_regularization": 5.0,
+    "learning_rate": 0.05,
+    "max_depth": 5,
+    "max_iter": 300,
+    "random_state": 42
+  }
+}

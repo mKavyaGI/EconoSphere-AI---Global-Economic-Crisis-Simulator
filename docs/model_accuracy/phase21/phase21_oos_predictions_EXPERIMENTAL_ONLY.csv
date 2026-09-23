@@ -1,0 +1,5 @@
+# OOS_EVALUATION_EXECUTED=FALSE,OOS_DATA_AVAILABLE=FALSE,OOS_PREDICTIONS_GENERATED=FALSE
+# Phase 21 found no genuinely new labeled OOS data.
+# This file is NOT an empty successful prediction output.
+# It explicitly records that no OOS evaluation was performed.
+feature_year,target_year,country_code,phase11_prediction,a5a_prediction,actual_gdp_growth,phase11_abs_error,a5a_abs_error

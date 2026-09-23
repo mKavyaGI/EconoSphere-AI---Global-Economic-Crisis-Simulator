@@ -1,0 +1,17 @@
+{
+  "architecture": "A5a_EqualWeightEnsemble",
+  "components": {
+    "M0": "phase20_M0_EXPERIMENTAL_ONLY.joblib",
+    "Ridge": "phase20_Ridge_EXPERIMENTAL_ONLY.joblib",
+    "RF": "phase20_RF_EXPERIMENTAL_ONLY.joblib"
+  },
+  "weights": {
+    "M0": 0.3333333333333333,
+    "Ridge": 0.3333333333333333,
+    "RF": 0.3333333333333333
+  },
+  "clip_low": -40.0,
+  "clip_high": 60.0,
+  "n_features": 31,
+  "status": "EXPERIMENTAL_ONLY"
+}

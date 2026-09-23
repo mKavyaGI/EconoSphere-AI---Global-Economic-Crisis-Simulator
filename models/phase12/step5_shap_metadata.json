@@ -1,0 +1,41 @@
+{
+  "phase": 12,
+  "step": 5,
+  "model_name": "Phase 12 Step 4 Candidate B (Regime Features)",
+  "model_parameters": {
+    "learning_rate": 0.05,
+    "max_depth": 5,
+    "max_iter": 300,
+    "l2_regularization": 5.0,
+    "random_state": 42
+  },
+  "candidate_b_definition": "Phase 11 features + growth_regime_num + stress_regime_num",
+  "raw_dataset_MD5": "8ac7e0b2bf09fbe89289f82d0c7cf25e",
+  "shap_library_version": "None (Custom Fallback)",
+  "explainer_type": "DeterministicMarginalExplainer",
+  "fallback_method_if_used": "DeterministicMarginalExplainer (Custom SHAP Fallback due to numba/Python 3.14 incompatibility)",
+  "random_seed": 42,
+  "train_period": [
+    2000,
+    2018
+  ],
+  "validation_period": [
+    2019,
+    2022
+  ],
+  "test_period": [
+    2023,
+    2024
+  ],
+  "walk_forward_periods": "2013-2024",
+  "candidate_b_validation_RMSE": 8.259787229728492,
+  "candidate_b_test_RMSE": 3.86396794158182,
+  "candidate_b_walk_forward_RMSE": 6.094315645924449,
+  "candidate_b_recession_RMSE": 10.181542982365313,
+  "growth_regime_global_rank": 28,
+  "stress_regime_global_rank": 33,
+  "final_explainability_decision": "EXPLAINABILITY INCONCLUSIVE",
+  "production_model_modified": false,
+  "phase11_artifacts_modified": false,
+  "phase12_previous_artifacts_modified": false
+}

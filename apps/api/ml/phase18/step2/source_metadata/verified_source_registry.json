@@ -1,0 +1,20 @@
+[
+    {
+        "provider": "World Bank",
+        "feature_family": "CPI",
+        "availability_class": "CLASS V2 - RELEASE-LAG-CONSERVATIVE",
+        "status": "SOURCE_UNAVAILABLE_FOR_EMPIRICAL_EVALUATION"
+    },
+    {
+        "provider": "IMF",
+        "feature_family": "Policy Rates",
+        "availability_class": "CLASS V3 - CURRENT REVISED HISTORY ONLY",
+        "status": "SOURCE_UNAVAILABLE_FOR_EMPIRICAL_EVALUATION"
+    },
+    {
+        "provider": "World Bank",
+        "feature_family": "FX",
+        "availability_class": "CLASS V2 - RELEASE-LAG-CONSERVATIVE",
+        "status": "SOURCE_UNAVAILABLE_FOR_EMPIRICAL_EVALUATION"
+    }
+]

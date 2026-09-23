@@ -1,0 +1,74 @@
+{
+  "experiment_name": "Phase 12 Step 2 \u2014 GDP Momentum Feature Experiment",
+  "locked_model_name": "HistGradientBoostingRegressor",
+  "locked_model_parameters": {
+    "l2_regularization": 5.0,
+    "learning_rate": 0.05,
+    "max_depth": 5,
+    "max_iter": 300,
+    "random_state": 42
+  },
+  "experiments": [
+    "A_CONTROL",
+    "B_LAGS",
+    "C_MOMENTUM",
+    "D_ROLLING",
+    "E_TURNING_POINT",
+    "F_FULL_MOMENTUM"
+  ],
+  "control_val_rmse": 8.285269216910393,
+  "control_test_rmse": 3.9112850017522343,
+  "official_phase11_test_rmse": 3.9113,
+  "best_candidate_by_val_rmse": "A_CONTROL",
+  "best_candidate_val_rmse": 8.285269216910393,
+  "promotion_candidate": null,
+  "final_decision": "KEEP PHASE 11",
+  "production_model_modified": false,
+  "raw_dataset_md5": "8ac7e0b2bf09fbe89289f82d0c7cf25e",
+  "leakage_status": "clean",
+  "experiment_metrics": {
+    "A_CONTROL": {
+      "val_rmse": 8.285269216910393,
+      "test_rmse": 3.9112850017522343,
+      "val_recession_rmse": 11.565294649013936,
+      "n_features": 31
+    },
+    "B_LAGS": {
+      "val_rmse": 8.285269216910393,
+      "test_rmse": 3.9112850017522343,
+      "val_recession_rmse": 11.565294649013936,
+      "n_features": 31
+    },
+    "C_MOMENTUM": {
+      "val_rmse": 8.307007858784669,
+      "test_rmse": 3.789391939940655,
+      "val_recession_rmse": 11.625923139424902,
+      "n_features": 34
+    },
+    "D_ROLLING": {
+      "val_rmse": 8.310164231492651,
+      "test_rmse": 3.9612005525915444,
+      "val_recession_rmse": 11.612794881837258,
+      "n_features": 34
+    },
+    "E_TURNING_POINT": {
+      "val_rmse": 8.340282626863871,
+      "test_rmse": 3.835555153309773,
+      "val_recession_rmse": 11.506469204481947,
+      "n_features": 35
+    },
+    "F_FULL_MOMENTUM": {
+      "val_rmse": 8.316753098183689,
+      "test_rmse": 3.782065005663917,
+      "val_recession_rmse": 11.61181361286964,
+      "n_features": 41
+    }
+  },
+  "five_country_2026_forecasts": {
+    "IND": 6.5305735156132485,
+    "CHN": 5.393421661498611,
+    "USA": 3.0067526140875662,
+    "JPN": 1.4725468429556337,
+    "GBR": 0.8593587464129642
+  }
+}

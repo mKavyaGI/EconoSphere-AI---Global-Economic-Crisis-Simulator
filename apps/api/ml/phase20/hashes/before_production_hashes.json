@@ -1,0 +1,17 @@
+{
+  "best_t1_gdp_growth_model.joblib": {
+    "md5": "9c539735897eaf6e72e5f54f047390d7",
+    "sha256": "748be64bcd3402375c4df4e45f9ba0c6858f52744714808ae8a2445f29248e78",
+    "size_bytes": 257671
+  },
+  "phase11_production_release_manifest.json": {
+    "md5": "9c673e2d5bcd12adc171a55bd86ca34e",
+    "sha256": "d865d439bfdc8aae2fa61b53bd56fc79b53de96facfdfff93a55e2ba062040b3",
+    "size_bytes": 2408
+  },
+  "master_panel_t1_missingness.csv": {
+    "md5": "2a490f1d3c245671b43602cd399d0fa0",
+    "sha256": "eedbc8c67876f49f7db9c465bea057ec507994c3cc6429a0a346b3c5d1635047",
+    "size_bytes": 4487036
+  }
+}

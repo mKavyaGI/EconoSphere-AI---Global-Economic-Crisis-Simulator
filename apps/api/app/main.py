@@ -17,12 +17,22 @@ logger = structlog.get_logger()
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     setup_logging()
-    await logger.ainfo("Starting EconoSphere AI API...")
+    await logger.ainfo("application_startup_attempt", message="Starting EconoSphere AI API...")
+    
+    if settings.env == "production" or settings.production_safety_mode:
+        from app.services.production_health import run_readiness_check
+        readiness = run_readiness_check()
+        if not readiness.get("ready"):
+            await logger.aerror("production_preflight_failure", message="Production preflight integrity check failed. Failing closed.", checks=readiness.get("checks"))
+            raise RuntimeError("Production preflight integrity check failed.")
+        await logger.ainfo("production_preflight_success", message="Production preflight integrity check passed.")
+
     await neo4j_conn.connect()
+    await logger.ainfo("application_ready")
     yield
+    await logger.ainfo("application_shutdown", message="Shutting down EconoSphere AI API...")
     await neo4j_conn.close()
     await engine.dispose()
-    await logger.ainfo("Shutting down EconoSphere AI API...")
 
 app = FastAPI(
     title=settings.app_name,
@@ -57,10 +67,24 @@ async def standardized_validation_exception_handler(request: Request, exc: Reque
         }
     )
 
+@app.exception_handler(Exception)
+async def global_exception_handler(request: Request, exc: Exception):
+    """Catch-all for unhandled exceptions (e.g. Neo4j connection issues) to prevent CORS Network Errors."""
+    logger.error(f"Unhandled exception: {str(exc)}", exc_info=True)
+    return JSONResponse(
+        status_code=500,
+        content={
+            "status": "error",
+            "code": 500,
+            "detail": "Internal Server Error: Service unavailable or database connection refused.",
+            "timestamp": datetime.now(timezone.utc).isoformat()
+        }
+    )
+
 app.add_middleware(CorrelationIdMiddleware)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=settings.allowed_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

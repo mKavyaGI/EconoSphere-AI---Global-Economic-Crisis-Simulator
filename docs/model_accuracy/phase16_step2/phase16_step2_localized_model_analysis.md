@@ -1,0 +1,17 @@
+# Phase 16 Step 2: Localized Model Analysis
+
+[Fold A] T3 GBR: WARNING - Small sample size (17 obs < 31 features)
+[Fold A] T3 BRA: WARNING - Small sample size (17 obs < 31 features)
+[Fold A] T3 FRA: WARNING - Small sample size (17 obs < 31 features)
+[Fold A] T3 CAN: WARNING - Small sample size (17 obs < 31 features)
+[Fold A] T3 AUS: WARNING - Small sample size (17 obs < 31 features)
+[Fold B] T3 GBR: WARNING - Small sample size (19 obs < 31 features)
+[Fold B] T3 BRA: WARNING - Small sample size (19 obs < 31 features)
+[Fold B] T3 FRA: WARNING - Small sample size (19 obs < 31 features)
+[Fold B] T3 CAN: WARNING - Small sample size (19 obs < 31 features)
+[Fold B] T3 AUS: WARNING - Small sample size (19 obs < 31 features)
+[CANONICAL] T3 GBR: WARNING - Small sample size (19 obs < 31 features)
+[CANONICAL] T3 BRA: WARNING - Small sample size (19 obs < 31 features)
+[CANONICAL] T3 FRA: WARNING - Small sample size (19 obs < 31 features)
+[CANONICAL] T3 CAN: WARNING - Small sample size (19 obs < 31 features)
+[CANONICAL] T3 AUS: WARNING - Small sample size (19 obs < 31 features)

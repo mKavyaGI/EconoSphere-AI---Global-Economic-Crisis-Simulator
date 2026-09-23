@@ -1,0 +1,250 @@
+ility failure
+* unauthorized model modification
+
+Then:
+
+`FROZEN_PRODUCTION_RETAINED`
+
+---
+
+# 28. REQUIRED REPORTS
+
+Create a dedicated Phase 21 directory:
+
+`docs/model_accuracy/phase21/`
+
+Generate at minimum:
+
+1. `phase21_pre_evaluation_lock.md`
+2. `phase21_oos_data_vintage_audit.md`
+3. `phase21_oos_origin_registry.md`
+4. `phase21_primary_metrics.md`
+5. `phase21_origin_comparison.md`
+6. `phase21_country_analysis.md`
+7. `phase21_priority_countries.md`
+8. `phase21_guardrail_analysis.md`
+9. `phase21_shock_analysis.md`
+10. `phase21_error_diversity.md`
+11. `phase21_statistical_analysis.md`
+12. `phase21_reproducibility.md`
+13. `phase21_operational_audit.md`
+14. `phase21_production_immutability.md`
+15. `phase21_gate_results.md`
+16. `phase21_governance_decision.md`
+17. `phase21_oos_predictions.csv`
+18. `phase21_origin_comparison.csv`
+19. `phase21_country_comparison.csv`
+20. `phase21_consolidated_report.md`
+
+Also create:
+
+`phase21_oos_predictions_EXPERIMENTAL_ONLY.csv`
+
+if appropriate.
+
+---
+
+# 29. REQUIRED MACHINE-READABLE GOVERNANCE ARTIFACT
+
+Create:
+
+`docs/model_accuracy/phase21/phase21_governance.json`
+
+Include:
+
+```json
+{
+  "phase": 21,
+  "production_model": "Phase 11 M0",
+  "candidate_model": "Phase 20 A5a",
+  "true_new_oos_data": true,
+  "oos_origins": [],
+  "oos_observations": 0,
+  "phase11_rmse": null,
+  "a5a_rmse": null,
+  "delta_rmse": null,
+  "phase11_mae": null,
+  "a5a_mae": null,
+  "delta_mae": null,
+  "oos_rmse_improvement_percent": null,
+  "oos_mae_improvement_percent": null,
+  "production_artifacts_unchanged": true,
+  "leakage_checks_passed": true,
+  "reproducibility_passed": true,
+  "promotion_recommended": false,
+  "governance_decision": ""
+}
+```
+
+Populate with actual values.
+
+Do NOT fabricate null fields into positive results.
+
+---
+
+# 30. TEST REQUIREMENTS
+
+Create:
+
+`apps/api/tests/test_phase21_oos_validation.py`
+
+Include at least 30 meaningful tests.
+
+Tests must cover:
+
+* production hash immutability
+* dataset immutability
+* model immutability
+* feature schema
+* target exclusion
+* T+1 chronology
+* training-origin isolation
+* OOS-origin isolation
+* no future feature usage
+* no fabricated values
+* OOS authenticity
+* locked origin list
+* locked configuration
+* locked clipping
+* locked ensemble weights
+* A5a formula
+* Phase 11 reconstruction
+* deterministic predictions
+* artifact loading
+* schema validation
+* NaN handling
+* prediction count
+* RMSE calculation
+* MAE calculation
+* per-origin comparison
+* per-country comparison
+* guardrail calculations
+* priority-country calculations
+* error-diversity calculation
+* statistical-test reproducibility
+* production hash before/after
+* governance-state validity
+* no automatic promotion
+
+Run:
+
+```powershell
+python -m pytest apps/api/tests/test_phase21_oos_validation.py -q
+```
+
+Then run the full regression suite.
+
+Expected:
+
+`ALL_PREVIOUS_TESTS_PASS = TRUE`
+
+No existing Phase 11–20 test may regress.
+
+---
+
+# 31. EXECUTION ORDER
+
+Follow this exact order:
+
+### Step 1
+
+Inspect existing Phase 19 and Phase 20 implementation.
+
+### Step 2
+
+Identify the exact frozen A5a artifacts/configuration.
+
+### Step 3
+
+Hash production artifacts.
+
+### Step 4
+
+Create pre-OOS lock.
+
+### Step 5
+
+Determine whether genuinely new OOS labeled data exists.
+
+### Step 6
+
+If no valid OOS data exists:
+
+* do NOT perform model tuning
+* do NOT manufacture data
+* create the inconclusive report
+* run governance/tests
+* finish with:
+
+`A5A_OOS_VALIDATION_INCONCLUSIVE`
+
+`FROZEN_PRODUCTION_RETAINED`
+
+### Step 7
+
+If valid OOS data exists:
+
+* lock OOS origins
+* freeze configuration
+* run blind predictions
+* reveal labels
+* calculate metrics
+* perform statistical analysis
+* perform country/priority/guardrail analysis
+* perform shock/tail analysis
+* perform reproducibility audit
+
+### Step 8
+
+Run all promotion gates.
+
+### Step 9
+
+Hash production artifacts again.
+
+### Step 10
+
+Run Phase 21 tests.
+
+### Step 11
+
+Run the full regression suite.
+
+### Step 12
+
+Generate consolidated governance report.
+
+### Step 13
+
+DO NOT promote automatically.
+
+---
+
+# 32. FINAL REPORT MUST ANSWER THESE QUESTIONS
+
+The final report must explicitly answer:
+
+1. Was genuinely new OOS data available?
+2. Which forecast origins were genuinely unseen?
+3. What was Phase 11 RMSE on OOS data?
+4. What was A5a RMSE on OOS data?
+5. What was ΔRMSE?
+6. What was the percentage improvement?
+7. What was the MAE comparison?
+8. Did A5a win more OOS origins?
+9. Did A5a improve or degrade IND?
+10. Did A5a improve GBR/BRA/FRA/CAN/AUS?
+11. Did error tails improve or worsen?
+12. Did component error diversity persist?
+13. Was the improvement statistically meaningful?
+14. Was it practically meaningful?
+15. Were all leakage checks passed?
+16. Were all production artifacts unchanged?
+17. Was the result reproducible?
+18. Did A5a pass every promotion gate?
+19. Is promotion recommended?
+20. Why?
+
+---
+
+# 33. CRITICAL SCI

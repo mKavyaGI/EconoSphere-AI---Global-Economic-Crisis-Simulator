@@ -34,11 +34,11 @@ export default function TradeGraph({ nodes, edges, onNodeSelect, filterQuery, ca
 
       return {
         data: { 
+          ...node.properties,
           id: node.id, 
           label: label,
           category: node.label,
-          dimmed: !isVisible ? 'true' : 'false',
-          ...node.properties 
+          dimmed: !isVisible ? 'true' : 'false'
         }
       };
     });
@@ -47,12 +47,12 @@ export default function TradeGraph({ nodes, edges, onNodeSelect, filterQuery, ca
       const edgeDimmed = !hasActiveFilter || (!visibleNodeIds.has(edge.source) && !visibleNodeIds.has(edge.target));
       return {
         data: { 
+          ...edge.properties,
           id: edge.id, 
           source: edge.source, 
           target: edge.target,
           label: edge.type,
-          dimmed: edgeDimmed ? 'true' : 'false',
-          ...edge.properties 
+          dimmed: edgeDimmed ? 'true' : 'false'
         }
       };
     });
@@ -172,7 +172,7 @@ export default function TradeGraph({ nodes, edges, onNodeSelect, filterQuery, ca
         stylesheet={stylesheet as React.ComponentProps<typeof CytoscapeComponent>['stylesheet']}
         layout={{ 
           name: 'cose',
-          animate: true,
+          animate: false,
           randomize: true,
           nodeRepulsion: 400000,
           idealEdgeLength: 100

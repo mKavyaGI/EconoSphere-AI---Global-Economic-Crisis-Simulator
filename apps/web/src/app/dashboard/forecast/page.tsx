@@ -16,7 +16,8 @@ import {
   Activity,
   Layers,
   BarChart3,
-  Cpu
+  Cpu,
+  FlaskConical
 } from "lucide-react";
 import {
   useForecast,
@@ -25,6 +26,9 @@ import {
   useAnomalies,
   type ForecastPrediction,
 } from "@/hooks/useAI";
+import { useMLForecasts, useMLForecast } from "@/hooks/useMLForecast";
+import { GDPForecastCard } from "@/components/forecast/GDPForecastCard";
+import { ForecastComparisonTable } from "@/components/forecast/ForecastComparisonTable";
 
 const SUPPORTED_COUNTRIES = ["USA", "CHN", "DEU", "JPN", "IND", "GBR", "BRA", "FRA", "CAN", "AUS"];
 const SUPPORTED_MODELS = ["XGBOOST", "TRANSFORMER", "GNN", "LIGHTGBM", "VAR", "RL"];
@@ -45,6 +49,12 @@ export default function AIForecastDashboard() {
   const [selectedIndicator, setSelectedIndicator] = useState<string>("GDP Growth");
   const [forceRefresh, setForceRefresh] = useState<boolean>(false);
   const [selectedExplainPrediction, setSelectedExplainPrediction] = useState<ForecastPrediction | null>(null);
+
+  const [selectedMLIso, setSelectedMLIso] = useState<string>("USA");
+
+  // Production ML Forecast Data
+  const { data: mlListResponse, isLoading: mlLoading, error: mlError } = useMLForecasts();
+  const { data: selectedMLForecast, isLoading: mlSingleLoading } = useMLForecast(selectedMLIso);
 
   // M-1 Fix: Use React Query hooks (respects NEXT_PUBLIC_API_URL env var via shared apiClient)
   const { data: forecastData, isLoading: forecastLoading, error: forecastError, refetch: refetchForecast } =
@@ -307,6 +317,83 @@ export default function AIForecastDashboard() {
         </div>
       )}
 
+      {/* ================================================================= */}
+      {/* PHASE 11: PRODUCTION ML FORECAST PIPELINE (LOCKED)              */}
+      {/* ================================================================= */}
+      <div className="mb-12">
+        <div className="flex items-center gap-2 mb-6 pb-2 border-b border-slate-800">
+          <FlaskConical className="w-6 h-6 text-blue-400" />
+          <h2 className="text-2xl font-bold text-white tracking-tight">
+            Official Production ML Forecast
+          </h2>
+          <span className="ml-3 px-2 py-0.5 text-xs font-bold uppercase tracking-widest bg-blue-500/20 text-blue-300 border border-blue-500/30 rounded">
+            Phase 11
+          </span>
+        </div>
+
+        {mlLoading ? (
+          <div className="h-64 w-full bg-slate-900/50 animate-pulse rounded-2xl border border-slate-800 flex items-center justify-center">
+            <span className="text-slate-500 font-mono">Loading Production ML Forecasts...</span>
+          </div>
+        ) : mlError ? (
+          <div className="p-6 bg-rose-950/20 border border-rose-900/40 rounded-2xl">
+            <p className="text-rose-400 font-mono">Failed to load official ML forecast artifact.</p>
+          </div>
+        ) : mlListResponse ? (
+          <div className="grid grid-cols-1 xl:grid-cols-12 gap-8">
+            <div className="xl:col-span-4 flex flex-col gap-4">
+              <div className="bg-slate-900/90 border border-slate-800 rounded-xl p-4 flex items-center justify-between shadow-inner">
+                <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">
+                  Select Country:
+                </span>
+                <select
+                  value={selectedMLIso}
+                  onChange={(e) => setSelectedMLIso(e.target.value)}
+                  className="bg-slate-800 border border-slate-700 text-sm font-bold text-blue-300 rounded px-3 py-1.5 focus:outline-none cursor-pointer"
+                >
+                  {mlListResponse.metadata.available_countries.map((iso) => (
+                    <option key={iso} value={iso} className="bg-slate-900 text-white">
+                      {iso}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              {mlSingleLoading ? (
+                <div className="flex-1 min-h-[300px] bg-slate-900/50 animate-pulse rounded-2xl border border-slate-800" />
+              ) : selectedMLForecast ? (
+                <GDPForecastCard forecast={selectedMLForecast} />
+              ) : (
+                <div className="flex-1 flex items-center justify-center bg-slate-900/40 border border-slate-800 border-dashed rounded-2xl p-6 text-slate-500">
+                  No forecast data available for {selectedMLIso}.
+                </div>
+              )}
+            </div>
+
+            <div className="xl:col-span-8">
+              <ForecastComparisonTable forecasts={mlListResponse.forecasts} />
+              <div className="mt-4 text-xs text-slate-500 flex justify-end">
+                <span>
+                  Model: <span className="font-mono text-slate-400">{mlListResponse.metadata.algorithm}</span>
+                  {" | "}
+                  Test RMSE: <span className="font-mono text-emerald-400">{mlListResponse.metadata.test_rmse.toFixed(4)}</span>
+                </span>
+              </div>
+            </div>
+          </div>
+        ) : null}
+      </div>
+
+      {/* ================================================================= */}
+      {/* PHASE 10: GENERATIVE AI & DECISION INTELLIGENCE                   */}
+      {/* ================================================================= */}
+      <div className="flex items-center gap-2 mb-6 pb-2 border-b border-slate-800">
+        <Brain className="w-6 h-6 text-purple-400" />
+        <h2 className="text-2xl font-bold text-white tracking-tight">
+          Generative AI Intelligence
+        </h2>
+      </div>
+
       {/* Top Banner: Active Model Profile & Trajectory Tag */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
         <div className="bg-slate-900/60 border border-slate-800 rounded-xl p-4 flex items-center justify-between">
@@ -547,12 +634,12 @@ export default function AIForecastDashboard() {
               {/* Affected Entities Pills */}
               <div className="flex flex-wrap items-center gap-2 mb-4 text-xs">
                 <span className="text-slate-400 font-semibold">Affected Partners:</span>
-                {rec.affected_countries.map(c => (
-                  <span key={c} className="px-2 py-0.5 bg-slate-800 text-cyan-300 rounded-md font-mono font-bold">{c}</span>
+                {rec.affected_countries.map((c, idx) => (
+                  <span key={`${c}-${idx}`} className="px-2 py-0.5 bg-slate-800 text-cyan-300 rounded-md font-mono font-bold">{c}</span>
                 ))}
                 <span className="text-slate-400 font-semibold ml-4">Ripple Sectors:</span>
-                {rec.affected_sectors.map(s => (
-                  <span key={s} className="px-2 py-0.5 bg-slate-800 text-purple-300 rounded-md">{s}</span>
+                {rec.affected_sectors.map((s, idx) => (
+                  <span key={`${s}-${idx}`} className="px-2 py-0.5 bg-slate-800 text-purple-300 rounded-md">{s}</span>
                 ))}
               </div>
 

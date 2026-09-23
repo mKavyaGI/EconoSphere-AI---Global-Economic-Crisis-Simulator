@@ -1,0 +1,11 @@
+check,result,detail
+artifact_integrity,PASS,"MD5, SHA-256, release_id, production_status, fingerprint verified"
+schema_integrity,PASS,31 features verified; Candidate B and target fields absent
+configuration_integrity,PASS,"max_depth=5, l2_regularization=5.0, learning_rate=0.05, max_iter=300, random_state=42"
+health_endpoint,PASS,status=healthy
+readiness_endpoint,PASS,ready=True
+prediction_consistency,PASS,|diff|=0.00e+00 < 1e-12
+master_panel_csv_immutable,PASS,MD5 and SHA-256 unchanged
+production_model_immutable,PASS,MD5 and SHA-256 unchanged
+release_manifest_immutable,PASS,MD5 and SHA-256 unchanged
+candidate_b_isolation,PASS,status=EXPERIMENTAL — NOT PRODUCTION

@@ -1,0 +1,18 @@
+{
+  "timestamp": "2026-08-20T06:49:40.877473+00:00",
+  "final_decision": "PHASE 11 PRODUCTION CLEARED",
+  "model_class": "HistGradientBoostingRegressor",
+  "features": 31,
+  "max_depth": 5,
+  "l2_regularization": 5.0,
+  "learning_rate": 0.05,
+  "max_iter": 300,
+  "random_state": 42,
+  "target_exclusion": true,
+  "validation_RMSE": 8.285269216910393,
+  "test_RMSE": 3.9112850017522343,
+  "raw_dataset_MD5": "8ac7e0b2bf09fbe89289f82d0c7cf25e",
+  "unauthorized_artifact_changes": false,
+  "candidate_b_status": "EXPERIMENTAL \u2014 NOT PRODUCTION",
+  "full_test_suite_failures": 0
+}

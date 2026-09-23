@@ -1,0 +1,16 @@
+{
+  "selected_model": "A. HistGradientBoosting (Locked Control)",
+  "calibration_q90": 11.45065662999364,
+  "validation_metrics": {
+    "MAE": 5.173154374407103,
+    "RMSE": 8.285269216910393,
+    "R2": 0.02604381467605721,
+    "Bias": 0.761157054364431
+  },
+  "test_metrics": {
+    "MAE": 2.2886055006405965,
+    "RMSE": 3.9112850017522343,
+    "R2": 0.008447644817029865,
+    "Bias": 0.2640783716227565
+  }
+}

@@ -1,0 +1,53 @@
+[
+    {
+        "indicator_group": "C1_CPI",
+        "source_name": "FRED",
+        "official_authority": "Federal Reserve Bank of St. Louis",
+        "countries_supported": "Global",
+        "frequency": "Monthly",
+        "historical_start": "1960",
+        "historical_end": "Present",
+        "publication_timing_verified": true,
+        "revision_policy_verified": true,
+        "vintage_availability_verified": true,
+        "leakage_safe_reconstruction_feasible": true,
+        "access_status": "API_KEY_REQUIRED",
+        "final_status": "SOURCE_UNAVAILABLE_FOR_EMPIRICAL_EVALUATION",
+        "rejection_reason": "No active API key mapped in environment",
+        "verification_timestamp": "2026-09-01T13:10:47.331797"
+    },
+    {
+        "indicator_group": "C2_POLICY_RATES",
+        "source_name": "BIS",
+        "official_authority": "Bank for International Settlements",
+        "countries_supported": "Global",
+        "frequency": "Monthly",
+        "historical_start": "1946",
+        "historical_end": "Present",
+        "publication_timing_verified": true,
+        "revision_policy_verified": true,
+        "vintage_availability_verified": true,
+        "leakage_safe_reconstruction_feasible": true,
+        "access_status": "NO_API_CLIENT_IMPLEMENTED",
+        "final_status": "SOURCE_UNAVAILABLE_FOR_EMPIRICAL_EVALUATION",
+        "rejection_reason": "Missing structured API client and live access",
+        "verification_timestamp": "2026-09-01T13:10:47.331817"
+    },
+    {
+        "indicator_group": "C3_FX",
+        "source_name": "FRED",
+        "official_authority": "Federal Reserve Bank of St. Louis",
+        "countries_supported": "Global",
+        "frequency": "Daily",
+        "historical_start": "1971",
+        "historical_end": "Present",
+        "publication_timing_verified": true,
+        "revision_policy_verified": true,
+        "vintage_availability_verified": true,
+        "leakage_safe_reconstruction_feasible": true,
+        "access_status": "API_KEY_REQUIRED",
+        "final_status": "SOURCE_UNAVAILABLE_FOR_EMPIRICAL_EVALUATION",
+        "rejection_reason": "No active API key mapped in environment",
+        "verification_timestamp": "2026-09-01T13:10:47.331822"
+    }
+]

@@ -1,0 +1,130 @@
+{
+  "raw": {
+    "md5": "8ac7e0b2bf09fbe89289f82d0c7cf25e",
+    "rows": 6136,
+    "cols": 19
+  },
+  "proc": {
+    "rows": 6084,
+    "cols": 39,
+    "dup_id_year": 0,
+    "inx_exists": false,
+    "nru_exists": true,
+    "gdp_growth_pct_exists": true
+  },
+  "fc": "name 'np' is not defined",
+  "inf_2025": {
+    "rows": 234,
+    "target_nans": 234,
+    "avail_sum": 0
+  },
+  "train_script": {
+    "target_col": true,
+    "feature_cols_has_target": false,
+    "feature_cols_has_pct": false,
+    "train_years": true,
+    "val_years": true,
+    "test_years": true,
+    "scaler": true
+  },
+  "test_pred": {
+    "rows": 384,
+    "feature_years": [
+      2023,
+      2024
+    ],
+    "target_years": [
+      2024,
+      2025
+    ],
+    "uses_pct": false
+  },
+  "targets_test": {
+    "IND": {
+      "2024": {
+        "act": 7.09927893176518,
+        "pred": 7.082140771379788,
+        "err": -0.0171381603853921
+      },
+      "2025": {
+        "act": 7.56666179284244,
+        "pred": 7.008368719338183,
+        "err": -0.5582930735042568
+      }
+    },
+    "CHN": {
+      "2024": {
+        "act": 4.95830378788091,
+        "pred": 4.938486425223785,
+        "err": -0.0198173626571245
+      },
+      "2025": {
+        "act": 4.95994886240992,
+        "pred": 5.321381327594679,
+        "err": 0.3614324651847589
+      }
+    },
+    "USA": {
+      "2024": {
+        "act": 2.79318715363841,
+        "pred": 2.6587992737909723,
+        "err": -0.1343878798474378
+      },
+      "2025": {
+        "act": 2.16138195623856,
+        "pred": 2.363356692336596,
+        "err": 0.2019747360980357
+      }
+    },
+    "JPN": {
+      "2024": {
+        "act": -0.240084236041696,
+        "pred": 2.50494084182084,
+        "err": 2.745025077862536
+      },
+      "2025": {
+        "act": 1.19311288444599,
+        "pred": 1.505424903267437,
+        "err": 0.312312018821447
+      }
+    },
+    "GBR": {
+      "2024": {
+        "act": 1.08027716858781,
+        "pred": 1.399721947238908,
+        "err": 0.3194447786510979
+      },
+      "2025": {
+        "act": 1.38844207858726,
+        "pred": 1.4639222340920743,
+        "err": 0.0754801555048143
+      }
+    }
+  },
+  "f26": {
+    "rows": 217,
+    "feature_years": [
+      2025
+    ],
+    "target_years": [
+      2026
+    ],
+    "actual_exists": false
+  },
+  "targets_f26": {
+    "IND": 6.824964048023532,
+    "CHN": 5.288073133600991,
+    "USA": 2.0353960126017983,
+    "JPN": 1.5106764031544115,
+    "GBR": -0.0805590685891457
+  },
+  "meta": {
+    "target": "gdp_growth_next_year",
+    "train_period": "2000-2018",
+    "val_period": "2019-2022",
+    "test_period": "2023-2025",
+    "best": null,
+    "best_derived": "HistGradientBoosting",
+    "best_rmse": 8.334162609920014
+  }
+}

@@ -1,0 +1,50 @@
+{
+    "audit_script": "audit_phase13_step2_operational_safety.py",
+    "audit_timestamp": "2026-08-27T06:19:49.060296+00:00",
+    "phase": "Phase 13 Step 2",
+    "purpose": "Operational safety and artifact immutability verification",
+    "frozen_model": "models/phase11/best_t1_gdp_growth_model.joblib",
+    "release_manifest": "models/phase11/phase11_production_release_manifest.json",
+    "dataset": "data/raw/master_panel.csv",
+    "protected_artifact_hashes_before": {
+        "master_panel_csv": {
+            "md5": "8ac7e0b2bf09fbe89289f82d0c7cf25e",
+            "sha256": "0bad18504ede43e2d2dbfdecab275c00ee84ab97f5ac4cee22857d6170515db0"
+        },
+        "production_model": {
+            "md5": "9c539735897eaf6e72e5f54f047390d7",
+            "sha256": "748be64bcd3402375c4df4e45f9ba0c6858f52744714808ae8a2445f29248e78"
+        },
+        "release_manifest": {
+            "md5": "9c673e2d5bcd12adc171a55bd86ca34e",
+            "sha256": "d865d439bfdc8aae2fa61b53bd56fc79b53de96facfdfff93a55e2ba062040b3"
+        }
+    },
+    "protected_artifact_hashes_after": {
+        "master_panel_csv": {
+            "md5": "8ac7e0b2bf09fbe89289f82d0c7cf25e",
+            "sha256": "0bad18504ede43e2d2dbfdecab275c00ee84ab97f5ac4cee22857d6170515db0"
+        },
+        "production_model": {
+            "md5": "9c539735897eaf6e72e5f54f047390d7",
+            "sha256": "748be64bcd3402375c4df4e45f9ba0c6858f52744714808ae8a2445f29248e78"
+        },
+        "release_manifest": {
+            "md5": "9c673e2d5bcd12adc171a55bd86ca34e",
+            "sha256": "d865d439bfdc8aae2fa61b53bd56fc79b53de96facfdfff93a55e2ba062040b3"
+        }
+    },
+    "artifact_integrity_verified": true,
+    "schema_integrity_verified": true,
+    "configuration_integrity_verified": true,
+    "health_endpoint_healthy": true,
+    "readiness_endpoint_ready": true,
+    "prediction_consistency_verified": true,
+    "prediction_tolerance": 1e-12,
+    "prediction_value": 1.8270724913945264,
+    "prediction_absolute_difference": 0.0,
+    "artifacts_immutable": true,
+    "candidate_b_isolated": true,
+    "overall_result": "OPERATIONAL_SAFETY_VERIFIED",
+    "candidate_b_status": "EXPERIMENTAL \u2014 NOT PRODUCTION"
+}

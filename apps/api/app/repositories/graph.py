@@ -10,8 +10,7 @@ class GraphRepository:
         
         async def fetch_data(tx):
             result = await tx.run(query, parameters)
-            records = await result.data()
-            return records
+            return [record async for record in result]
             
         async with neo4j_conn.driver.session() as session:
             records = await session.execute_read(fetch_data)

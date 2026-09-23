@@ -1,0 +1,28 @@
+{
+    "snapshot_timestamp": "2026-08-27T06:57:50.240348+00:00",
+    "phase": "Phase 14",
+    "step": "Step 1 Pre-deployment Snapshot",
+    "artifacts": {
+        "dataset": {
+            "relative_path": "data/raw/master_panel.csv",
+            "md5": "8ac7e0b2bf09fbe89289f82d0c7cf25e",
+            "sha256": "0bad18504ede43e2d2dbfdecab275c00ee84ab97f5ac4cee22857d6170515db0",
+            "size_bytes": 1235325,
+            "last_modified_timestamp": "2026-08-03T06:18:12+00:00"
+        },
+        "model": {
+            "relative_path": "models/phase11/best_t1_gdp_growth_model.joblib",
+            "md5": "9c539735897eaf6e72e5f54f047390d7",
+            "sha256": "748be64bcd3402375c4df4e45f9ba0c6858f52744714808ae8a2445f29248e78",
+            "size_bytes": 257671,
+            "last_modified_timestamp": "2026-08-20T06:35:26.907280+00:00"
+        },
+        "manifest": {
+            "relative_path": "models/phase11/phase11_production_release_manifest.json",
+            "md5": "9c673e2d5bcd12adc171a55bd86ca34e",
+            "sha256": "d865d439bfdc8aae2fa61b53bd56fc79b53de96facfdfff93a55e2ba062040b3",
+            "size_bytes": 2408,
+            "last_modified_timestamp": "2026-08-21T06:11:26.657973+00:00"
+        }
+    }
+}

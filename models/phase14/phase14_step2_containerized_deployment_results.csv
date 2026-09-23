@@ -1,0 +1,26 @@
+Check,Status
+Docker Daemon Reachable,PASS
+.dockerignore Configured,PASS
+Docker Compose Configuration,PASS
+Production Safety Configuration,PASS
+Read-Only Model Mount,PASS
+Read-Only Data Mount,PASS
+Clean API Image Build (--no-cache),PASS
+Container Stack Startup,PASS
+API Container Running,PASS
+Database Health Endpoint (/health),PASS
+Production Model Health (/forecasts/health),PASS
+Production Readiness Gate (/forecasts/readiness),PASS
+Production Model Info (/forecasts/model-info),PASS
+Live Production Inference,PASS
+Prediction Consistency (1e-12 Tolerance),PASS
+Candidate B Isolation (HTTP 422),PASS
+Target Leakage Protection (HTTP 422),PASS
+Production CORS Enforced,PASS
+Production CORS Preflight,PASS
+Fail-Closed Wildcard CORS Container,PASS
+Fail-Closed Missing Model Container,PASS
+Graceful Stack Teardown,PASS
+Model Immutability,PASS
+Dataset Immutability,PASS
+Manifest Immutability,PASS

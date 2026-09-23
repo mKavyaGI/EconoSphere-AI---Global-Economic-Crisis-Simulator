@@ -1,0 +1,30 @@
+{
+  "timestamp": "2026-08-20T06:47:13.169619+00:00",
+  "git_status": "On branch main\nYour branch is up to date with 'origin/main'.\n\nChanges not staged for commit:\n  (use \"git add <file>...\" to update what will be committed)\n  (use \"git restore <file>...\" to discard changes in working directory)\n\tmodified:   apps/api/app/api/v1/router.py\n\tmodified:   apps/api/app/main.py\n\tmodified:   apps/api/app/repositories/graph.py\n\tmodified:   apps/api/pyproject.toml\n\tmodified:   apps/api/uv.lock\n\tmodified:   apps/web/src/app/dashboard/countries/[iso3]/page.tsx\n\tmodified:   apps/web/src/app/dashboard/forecast/page.tsx\n\tmodified:   apps/web/src/components/charts/TradeGraph.tsx\n\nUntracked files:\n  (use \"git add <file>...\" to include in what will be committed)\n\tapps/api/app/api/v1/endpoints/forecasts.py\n\tapps/api/app/schemas/forecast.py\n\tapps/api/app/services/forecast_service.py\n\tapps/api/ml/analyze_t1_forecast_errors.py\n\tapps/api/ml/analyze_t1_model_robustness.py\n\tapps/api/ml/analyze_t1_regime_shap.py\n\tapps/api/ml/audit_phase12_production_readiness.py\n\tapps/api/ml/audit_phase12_step11_premaintenance.py\n\tapps/api/ml/audit_phase12_step8_reconciliation.py\n\tapps/api/ml/audit_step3_forward_indicators.py\n\tapps/api/ml/audit_step4_regime_features.py\n\tapps/api/ml/complete_forensic_audit.py\n\tapps/api/ml/data_audit.py\n\tapps/api/ml/data_preprocessing.py\n\tapps/api/ml/data_t1_advanced_features.py\n\tapps/api/ml/data_t1_gdp_momentum.py\n\tapps/api/ml/data_t1_missingness.py\n\tapps/api/ml/evaluate_t1_forward_indicators_walk_forward.py\n\tapps/api/ml/evaluate_t1_gdp_momentum_walk_forward.py\n\tapps/api/ml/evaluate_t1_regime_aware_walk_forward.py\n\tapps/api/ml/evaluate_t1_statistical_robustness.py\n\tapps/api/ml/evaluate_t1_walk_forward.py\n\tapps/api/ml/forecasting_target.py\n\tapps/api/ml/generate_step8_reports.py\n\tapps/api/ml/repair_phase11_artifact_step9.py\n\tapps/api/ml/reproduce_t1_step10_best.py\n\tapps/api/ml/train_baseline.py\n\tapps/api/ml/train_t1_adaptive_uncertainty.py\n\tapps/api/ml/train_t1_advanced.py\n\tapps/api/ml/train_t1_baseline.py\n\tapps/api/ml/train_t1_baseline.py.orig\n\tapps/api/ml/train_t1_country_aware.py\n\tapps/api/ml/train_t1_forward_indicators.py\n\tapps/api/ml/train_t1_gdp_momentum.py\n\tapps/api/ml/train_t1_missingness_aware.py\n\tapps/api/ml/train_t1_model_benchmark.py\n\tapps/api/ml/train_t1_regime_aware.py\n\tapps/api/tests/test_baseline_ml.py\n\tapps/api/tests/test_forecast_api.py\n\tapps/api/tests/test_forecast_service.py\n\tapps/api/tests/test_forecasting_target.py\n\tapps/api/tests/test_phase11_integration.py\n\tapps/api/tests/test_phase12_production_readiness.py\n\tapps/api/tests/test_phase12_step8_reconciliation.py\n\tapps/api/tests/test_phase12_step9_artifact_repair.py\n\tapps/api/tests/test_t1_adaptive_uncertainty.py\n\tapps/api/tests/test_t1_advanced.py\n\tapps/api/tests/test_t1_country_aware.py\n\tapps/api/tests/test_t1_forward_indicators.py\n\tapps/api/tests/test_t1_gdp_momentum.py\n\tapps/api/tests/test_t1_missingness.py\n\tapps/api/tests/test_t1_model_robustness.py\n\tapps/api/tests/test_t1_regime_aware.py\n\tapps/api/tests/test_t1_regime_shap.py\n\tapps/api/tests/test_t1_step11.py\n\tapps/api/tests/test_t1_walk_forward.py\n\tapps/api/tests/test_train_t1_baseline.py\n\tapps/web/src/components/forecast/\n\tapps/web/src/hooks/useMLForecast.ts\n\taudit_results.json\n\taudit_script.py\n\tdocs/phase11/\n\tdocs/phase12/\n\tmodels/\n\tmodify_t1.py\n\tnetwork.json\n\tverify_script.py\n\nno changes added to commit (use \"git add\" and/or \"git commit -a\")\n",
+  "protected_artifact_hashes": {
+    "data\\raw\\master_panel.csv": "8ac7e0b2bf09fbe89289f82d0c7cf25e",
+    "models\\phase11\\best_t1_gdp_growth_model.joblib": "9c539735897eaf6e72e5f54f047390d7",
+    "models\\phase11\\t1_step11_model_metadata.json": "e278b508301c974bfb3b237a2e57c041",
+    "data\\processed\\t1_step11_predictions.csv": "744bcd3614333a24c73fdf9d14720002",
+    "data\\processed\\t1_step11_2026_forecasts.csv": "4d8a646965884a1d51a2533ff0b33075",
+    "models\\phase12\\step1_walk_forward_metadata.json": "000da07b89043d0c6ab5a068a97ad314",
+    "models\\phase12\\step2_gdp_momentum_metadata.json": "e500bf5da4175bdb8b2ab548ea0bd15e",
+    "models\\phase12\\step3_forward_indicators_metadata.json": "51bf147744bb1402e77e7257dc844410",
+    "models\\phase12\\step4_regime_aware_metadata.json": "82f21c55995f97ddf4a821e6facd940e",
+    "models\\phase12\\step5_shap_metadata.json": "f64ee456968468922a4ad7df8ed1106a",
+    "models\\phase12\\step6_model_robustness_metadata.json": "8310698527b51957a00a3be89433cc66",
+    "models\\phase12\\step7_production_readiness_metadata.json": "e15f8357e756e097090e4a31f6aac9ff",
+    "models\\phase12\\step8_reconciliation_metadata.json": "f31038d34fc9c7ba851fde86ed577974",
+    "models\\phase12\\step9_artifact_repair_metadata.json": "beb3f30f0f8d8be702a63732ff466746",
+    "models\\phase12\\step10_test_reconciliation_metadata.json": "2c09dbe8e8a7b3d7170216035eedd3ec"
+  },
+  "test_suite_result_pre_maintenance": "FAIL (6 failures expected)",
+  "failing_tests": [
+    "apps/api/tests/test_phase12_production_readiness.py::test_07_model_max_depth_discrepancy_reported",
+    "apps/api/tests/test_phase12_production_readiness.py::test_08_model_l2_regularization_discrepancy_reported",
+    "apps/api/tests/test_phase12_production_readiness.py::test_12_feature_count_discrepancy_reported",
+    "apps/api/tests/test_phase12_production_readiness.py::test_24_no_experimental_overwrite",
+    "apps/api/tests/test_t1_model_robustness.py::test_02_phase11_artifacts_unchanged",
+    "apps/api/tests/test_t1_model_robustness.py::test_39_phase11_control_remains_locked"
+  ]
+}

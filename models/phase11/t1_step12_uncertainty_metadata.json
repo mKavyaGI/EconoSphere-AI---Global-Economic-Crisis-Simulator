@@ -1,0 +1,219 @@
+{
+  "step": "Phase11_Step12_AdaptiveUncertainty",
+  "point_model": "HistGradientBoostingRegressor (Locked Step 10)",
+  "point_model_test_rmse": 3.911285,
+  "point_model_val_rmse": 8.285269,
+  "locked_hyperparameters": {
+    "l2_regularization": 5.0,
+    "learning_rate": 0.05,
+    "max_depth": 5,
+    "max_iter": 300,
+    "random_state": 42
+  },
+  "locked_features": [
+    "exchange_rate_lcu_usd",
+    "tariff_rate_pct",
+    "remittances_usd",
+    "fdi_net_inflow_usd",
+    "unemployment_pct",
+    "imports_pct_gdp",
+    "tax_revenue_pct_gdp",
+    "exports_pct_gdp",
+    "interest_rate_pct",
+    "reserves_usd",
+    "current_account_pct_gdp",
+    "inflation_cpi_pct",
+    "population_total",
+    "gdp_current_usd",
+    "gdp_growth_lag1",
+    "gdp_growth_lag2",
+    "gdp_growth_lag3",
+    "inflation_lag1",
+    "unemployment_lag1",
+    "exports_lag1",
+    "imports_lag1",
+    "gdp_growth_rolling_mean_3",
+    "gdp_growth_rolling_std_3",
+    "gdp_growth_rolling_mean_5",
+    "inflation_rolling_mean_3",
+    "trade_openness",
+    "trade_balance_ratio",
+    "log_gdp_usd",
+    "log_population",
+    "gdp_growth_rolling_std_5",
+    "inflation_rolling_std_3"
+  ],
+  "min_country_calibration_n": 20,
+  "scale_bounds": {
+    "min": 0.75,
+    "max": 1.5
+  },
+  "train_years": [
+    2000,
+    2018
+  ],
+  "val_years": [
+    2019,
+    2022
+  ],
+  "test_years": [
+    2023,
+    2024
+  ],
+  "exp_a_global_q90": 11.450657,
+  "exp_b_country_q90_global_fallback": 11.450657,
+  "exp_b_n_countries_calibrated": 0,
+  "exp_c_vol_thresholds": {
+    "p33": 2.36115,
+    "p67": 3.723579
+  },
+  "exp_c_group_q90": {
+    "low": 9.110764,
+    "medium": 10.232007,
+    "high": 15.312917
+  },
+  "exp_d_asym_q10": -9.492275,
+  "exp_d_asym_q90": 5.948709,
+  "exp_e_global_q10": -9.492275,
+  "exp_e_global_q90": 5.948709,
+  "exp_e_n_countries_calibrated": 0,
+  "exp_f_median_sigma": 3.031205,
+  "final_decision": "KEEP STEP 11 GLOBAL Q90 CONTROL",
+  "promoted_method": "Exp A Global Q90 (Control)",
+  "validation_results": {
+    "exp_a": {
+      "label": "ExpA-Val",
+      "n_observations": 829,
+      "empirical_coverage": 0.8998793727382388,
+      "mean_interval_width": 22.901313259987283,
+      "median_interval_width": 22.90131325998728,
+      "nominal_coverage": 0.9,
+      "coverage_gap": -0.00012062726176120808,
+      "abs_coverage_error": 0.00012062726176120808,
+      "n_outside_interval": 83
+    },
+    "exp_b": {
+      "label": "ExpB-Val",
+      "n_observations": 829,
+      "empirical_coverage": 0.8998793727382388,
+      "mean_interval_width": 22.901313259987283,
+      "median_interval_width": 22.90131325998728,
+      "nominal_coverage": 0.9,
+      "coverage_gap": -0.00012062726176120808,
+      "abs_coverage_error": 0.00012062726176120808,
+      "n_outside_interval": 83
+    },
+    "exp_c": {
+      "label": "ExpC-Val",
+      "n_observations": 829,
+      "empirical_coverage": 0.8986731001206273,
+      "mean_interval_width": 22.91149940450587,
+      "median_interval_width": 20.464013929073108,
+      "nominal_coverage": 0.9,
+      "coverage_gap": -0.0013268998793727338,
+      "abs_coverage_error": 0.0013268998793727338,
+      "n_outside_interval": 84
+    },
+    "exp_d": {
+      "label": "ExpD-Val",
+      "n_observations": 829,
+      "empirical_coverage": 0.7997587454764777,
+      "mean_interval_width": 15.440983853328872,
+      "median_interval_width": 15.44098385332887,
+      "nominal_coverage": 0.9,
+      "coverage_gap": -0.10024125452352228,
+      "abs_coverage_error": 0.10024125452352228,
+      "n_outside_interval": 166
+    },
+    "exp_e": {
+      "label": "ExpE-Val",
+      "n_observations": 829,
+      "empirical_coverage": 0.7997587454764777,
+      "mean_interval_width": 15.440983853328872,
+      "median_interval_width": 15.44098385332887,
+      "nominal_coverage": 0.9,
+      "coverage_gap": -0.10024125452352228,
+      "abs_coverage_error": 0.10024125452352228,
+      "n_outside_interval": 166
+    },
+    "exp_f": {
+      "label": "ExpF-Val",
+      "n_observations": 829,
+      "empirical_coverage": 0.902291917973462,
+      "mean_interval_width": 24.132752623163167,
+      "median_interval_width": 22.46120885995952,
+      "nominal_coverage": 0.9,
+      "coverage_gap": 0.0022919179734619544,
+      "abs_coverage_error": 0.0022919179734619544,
+      "n_outside_interval": 81
+    }
+  },
+  "test_results": {
+    "exp_a": {
+      "label": "ExpA-Test",
+      "n_observations": 384,
+      "empirical_coverage": 0.984375,
+      "mean_interval_width": 22.90131325998728,
+      "median_interval_width": 22.90131325998728,
+      "nominal_coverage": 0.9,
+      "coverage_gap": 0.08437499999999998,
+      "abs_coverage_error": 0.08437499999999998,
+      "n_outside_interval": 6
+    },
+    "exp_b": {
+      "label": "ExpB-Test",
+      "n_observations": 384,
+      "empirical_coverage": 0.984375,
+      "mean_interval_width": 22.90131325998728,
+      "median_interval_width": 22.90131325998728,
+      "nominal_coverage": 0.9,
+      "coverage_gap": 0.08437499999999998,
+      "abs_coverage_error": 0.08437499999999998,
+      "n_outside_interval": 6
+    },
+    "exp_c": {
+      "label": "ExpC-Test",
+      "n_observations": 384,
+      "empirical_coverage": 0.9895833333333334,
+      "mean_interval_width": 22.774923649935058,
+      "median_interval_width": 20.464013929073108,
+      "nominal_coverage": 0.9,
+      "coverage_gap": 0.08958333333333335,
+      "abs_coverage_error": 0.08958333333333335,
+      "n_outside_interval": 4
+    },
+    "exp_d": {
+      "label": "ExpD-Test",
+      "n_observations": 384,
+      "empirical_coverage": 0.9609375,
+      "mean_interval_width": 15.440983853328872,
+      "median_interval_width": 15.44098385332887,
+      "nominal_coverage": 0.9,
+      "coverage_gap": 0.06093749999999998,
+      "abs_coverage_error": 0.06093749999999998,
+      "n_outside_interval": 15
+    },
+    "exp_e": {
+      "label": "ExpE-Test",
+      "n_observations": 384,
+      "empirical_coverage": 0.9609375,
+      "mean_interval_width": 15.440983853328872,
+      "median_interval_width": 15.44098385332887,
+      "nominal_coverage": 0.9,
+      "coverage_gap": 0.06093749999999998,
+      "abs_coverage_error": 0.06093749999999998,
+      "n_outside_interval": 15
+    },
+    "exp_f": {
+      "label": "ExpF-Test",
+      "n_observations": 384,
+      "empirical_coverage": 0.9895833333333334,
+      "mean_interval_width": 23.975491503421438,
+      "median_interval_width": 22.137554723163433,
+      "nominal_coverage": 0.9,
+      "coverage_gap": 0.08958333333333335,
+      "abs_coverage_error": 0.08958333333333335,
+      "n_outside_interval": 4
+    }
+  }
+}

@@ -3,10 +3,12 @@ import { useParams } from "next/navigation"
 import { useCountry, useCountryHistory } from "@/hooks/useCountry"
 import { useRisk } from "@/hooks/useAI"
 import { LineChart } from "@/components/charts/LineChart"
-import { ArrowLeft, Users, Landmark, MapPin, DollarSign, Target, Activity, Brain, Globe } from "lucide-react"
+import { ArrowLeft, Users, Landmark, MapPin, DollarSign, Target, Activity, Brain, Globe, FlaskConical } from "lucide-react"
 import Link from "next/link"
 import { ErrorState } from "@/components/ui/ErrorState"
 import { EmptyState } from "@/components/ui/EmptyState"
+import { useMLForecast } from "@/hooks/useMLForecast"
+import { GDPForecastCard } from "@/components/forecast/GDPForecastCard"
 
 export default function CountryProfilePage() {
   const { iso3 } = useParams()
@@ -35,6 +37,9 @@ export default function CountryProfilePage() {
   } = useCountryHistory(iso3 as string, "Inflation")
 
   const { data: riskScorecard } = useRisk(iso3 as string)
+
+  // Production ML Forecast Data
+  const { data: mlForecast } = useMLForecast(iso3 as string)
 
   if (isCountryLoading) {
     return (
@@ -164,6 +169,19 @@ export default function CountryProfilePage() {
           )}
         </div>
       </div>
+
+      {/* Production ML Forecast */}
+      {mlForecast && (
+        <div>
+          <div className="flex items-center gap-2 mb-4">
+            <FlaskConical className="w-5 h-5 text-blue-400" />
+            <h2 className="text-xl font-bold text-white">Official 2026 Prediction</h2>
+          </div>
+          <div className="max-w-3xl">
+            <GDPForecastCard forecast={mlForecast} />
+          </div>
+        </div>
+      )}
       
       {/* Active Analytical Modules */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
