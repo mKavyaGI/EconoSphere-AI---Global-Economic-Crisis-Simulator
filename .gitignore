@@ -4,6 +4,8 @@
 .env
 .env.*
 !.env.example
+!.env*.example
+!*.env.example
 
 # ================================
 # Python
@@ -74,8 +76,10 @@ Thumbs.db
 # Large datasets
 # Keep dataset structure, not huge raw files
 # ================================
-data/raw/
-data/processed/
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
 
 # ================================
 # Temporary files
