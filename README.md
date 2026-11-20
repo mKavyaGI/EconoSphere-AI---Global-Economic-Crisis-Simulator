@@ -62,7 +62,7 @@ Spin up the entire stack (PostgreSQL, Neo4j, Redis, FastAPI backend, and Next.js
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/mKavyaGI/EconoSphere-AI---Global-Economic-Crisis-Simulator.git
+git clone https://github.com/nrusinha27/EcnoSphere-AI---Global-Economic-Crisis-Simulator.git
 cd EconoSphere-AI---Global-Economic-Crisis-Simulator
 
 # 2. Launch all services via Docker Compose
