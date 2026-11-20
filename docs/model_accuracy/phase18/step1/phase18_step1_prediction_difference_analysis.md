@@ -1,3 +1,0 @@
-# phase18_step1_prediction_difference_analysis
-
-Generated automatically.

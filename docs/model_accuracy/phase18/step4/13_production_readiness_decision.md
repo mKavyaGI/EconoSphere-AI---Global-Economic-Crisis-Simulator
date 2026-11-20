@@ -1,3 +1,0 @@
-# Final Decision
-
-`FROZEN_PRODUCTION_RETAINED`

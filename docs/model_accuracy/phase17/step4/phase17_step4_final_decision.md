@@ -1,3 +1,0 @@
-# Phase 17 Step 4: Final Decision
-
-`REPRODUCTION_CONFIRMED_AND_REFIT_INFERIOR`
